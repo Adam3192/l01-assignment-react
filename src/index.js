@@ -1,17 +1,26 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import ReactDOM from 'react-dom';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+const name = React.createElement('h1', null, 'Adam Dixon');
+const title = React.createElement('p', null, 'Aspiring Software Developer');
+const header = React.createElement('div', null, [name, title]);
+
+const attributeArray = ["Quick Learner", "Hard-working", "Loves Coffee"];
+const attributes = attributeArray.map((attribute) => React.createElement('li', null, attribute));
+const attributeList = React.createElement('ul',null, attributes);
+
+const link = React.createElement('a', {href: "https://www.youtube.com/"}, 'My Github Page');
+const footer = React.createElement('div', null, link);
+
+const container = React.createElement('div', null, [header, attributeList, footer]);
+
+ReactDOM.render(
+  container,
+  document.getElementById('root')
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+
+
+
+
+
